@@ -96,3 +96,44 @@ yyaxis right
 plot(month,temp); 
 
 ylabel('temperature'); 
+
+%Animate lines
+figure; % Open a new figure
+
+h=animatedline;
+
+x=1:1000;
+y=sin(x);
+
+for i=1:length(x)
+    addpoints(h,x(i),y(i));
+    drawnow;
+end
+
+% Save the animation's final frame
+%frame = getframe(gcf); % Capture the current frame
+%imwrite(frame.cdata, fullfile(save_folder, 'Animated_Sine_Wave.png')); 
+
+%Bar graphs
+figure;
+
+y = [20 25 30 50 90 80];
+
+x = 2000:2005; 
+
+bar(x,y); % also try bar(x,y,0.1 )
+
+y = [20 25 30 50 90 80; 50 60 70 80 90 100]; 
+
+bar(y); 
+
+bar(y,'stacked'); 
+
+barh(y); 
+
+barh(y,'stacked'); 
+
+barh(x,y); 
+
+barh(x,y,0.4); 
+
