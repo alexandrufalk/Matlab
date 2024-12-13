@@ -51,3 +51,48 @@ subplot(2,2,1), plot(x,y);
 subplot(2,2,2), plot(x,z); 
 subplot(2,2,3), plot(y,z); 
 subplot(2,2,4), plot(x,x); 
+
+%Combining plots with hold on
+x = 0:0.2:10; 
+
+y1 = sin(x);
+
+plot(x,y1); 
+
+hold on
+
+y2 = sin(x/2); 
+
+plot(x,y2);  
+
+plot(x,y2);
+
+y3 = 2*sin(x); 
+
+scatter(x,y3)
+
+bar(x,y3)
+
+%Creating plots with two axes
+
+
+
+month = 1:12; 
+
+percep = [3.4 3.3 4.3 3.7 3.5 3.7 3.4 3.4 3.4 3.9 4.0 3.8];
+
+temp = [16 25 40 58 59 70 77 77 65 56 47 34]; 
+
+yyaxis left
+
+figure,plot(month,percep); 
+
+ylabel('percipitation'); 
+
+xlabel('month'); 
+
+yyaxis right 
+
+plot(month,temp); 
+
+ylabel('temperature'); 
