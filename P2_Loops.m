@@ -85,7 +85,7 @@ end
 A = zeros(l); % Initialize the matrix
 center2 = (l+1)/2; % Center index
 
-% Loop through layers, starting from the center
+
 for i = 1:center2
     A(i:end-i+1,i) = (center2-i) +1;
     A(i,i:(end-i+1)) = (center2-i) +1;
