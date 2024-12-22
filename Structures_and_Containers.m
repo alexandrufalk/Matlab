@@ -1,3 +1,5 @@
+
+clear all
 % Creating structure
 
 student=struct('dateofbirth','','Age',{},'Grades',{})
@@ -81,3 +83,42 @@ isstruct(C)
 isstruct(v1) 
 
 isstruct(s1)
+
+%Creating Map Container
+
+mycont=containers.Map({'jan','feb','march'},{1 2 3})
+
+mycont('jan')
+
+x = rand(3)
+
+mycont = containers.Map({'jan','feb','march'}, {x(1,:),x(2,:),x(3,:)})
+
+mycont('feb')
+
+keys(mycont)
+
+values(mycont)
+
+%Concatenating containers
+
+ mycont = containers.Map({'jan','feb','march'},{rand(1,3), [5;6;9], 'hello'})
+
+ remove(mycont,'jan')
+
+ %mycont('jan') 
+
+ isKey(mycont,'feb') 
+
+ isKey(mycont,{'feb' 'march'})
+mycont = containers.Map({'jan','feb','march'},{rand(1,3), [5;6;9], 'hello'})
+
+mycont2 = containers.Map({'apr','may','jun'},{rand(1,3), [10;15], 'world'})
+
+mylargecont=[mycont;mycont2]
+keys(mylargecont)
+values(mylargecont) 
+values(mycont)
+mylargecont('jan')
+mycont('jan')
+mycont2('jan')
